@@ -1,0 +1,57 @@
+# ============================================================================
+# Hybrid LLM Safety System - Configuration
+# ============================================================================
+
+# --- Thresholds ---
+thresholds:
+  fast_filter_threshold: 0.9        # Short-circuit if fast layer > this
+  embedding_similarity_threshold: 0.75
+  ml_confidence_threshold: 0.7
+  rule_confidence_high: 0.9         # Considered definitive match
+  rule_confidence_medium: 0.7       # Worth flagging
+  injection_threshold: 0.7
+  roleplay_threshold: 0.75
+
+# --- Models ---
+models:
+  embedding_model: "all-MiniLM-L6-v2"
+  classifier_model: "distilbert-base-uncased"
+  device: "auto"                    # auto = gpu if available, else cpu
+
+# --- Performance ---
+performance:
+  cache_ttl_seconds: 3600
+  max_context_turns: 5
+  max_input_length: 512
+  max_request_size: 10000
+  batch_size: 16
+
+# --- File Paths ---
+paths:
+  patterns_path: "data/patterns/unsafe_patterns.jsonl"
+  toxicity_keywords_path: "data/patterns/toxicity_keywords.txt"
+  model_path: "data/models/safety_classifier"
+  embeddings_path: "data/patterns/embeddings.jsonl"
+
+# --- Logging ---
+logging:
+  level: "INFO"
+  format: "json"
+  output: "logs/classifications.log"
+  debug_mode: false
+
+# --- Rate Limits ---
+rate_limits:
+  classify_ip: "10/minute"
+  classify_api_key: "100/minute"
+  health: "100/minute"
+
+# --- Authentication ---
+auth:
+  require_api_key: true
+  api_keys: []  # Set via env var SAFETY_AUTH_API_KEYS
+
+# --- CORS ---
+cors:
+  allowed_origins: []
+  allow_credentials: false

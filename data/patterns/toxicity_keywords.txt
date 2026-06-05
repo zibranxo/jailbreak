@@ -1,0 +1,20 @@
+# Toxicity keywords (expand carefully to avoid false positives)
+# Comments start with #
+hate
+violent
+abuse
+kill
+destroy
+attack
+harm
+racist
+sexist
+threat
+danger
+illegal
+weapon
+bomb
+poison
+murder
+hurt
+terrorist
