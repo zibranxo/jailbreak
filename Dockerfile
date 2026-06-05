@@ -28,5 +28,5 @@ RUN python scripts/download_models.py
 # Expose port 7860 (Hugging Face Spaces default)
 EXPOSE 7860
 
-# Start FastAPI on port 7860
-CMD ["uvicorn", "api.server:app", "--host", "0.0.0.0", "--port", "7860"]
+# Start Streamlit Dashboard on port 7860
+CMD ["streamlit", "run", "dashboard.py", "--server.port", "7860", "--server.address", "0.0.0.0"]
