@@ -709,11 +709,11 @@ tokenizers==0.22.2
 
 toml==0.10.2
 
-torch==2.12.0+cpu
+torch==2.12.0
 
-torchaudio==2.11.0+cpu
+torchaudio==2.11.0
 
-torchvision==0.27.0+cpu
+torchvision==0.27.0
 
 tornado==6.5.5
 
