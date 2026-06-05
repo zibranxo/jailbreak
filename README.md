@@ -1,3 +1,12 @@
+---
+title: LLM Safety Shield
+emoji: 🛡️
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+---
+
 # 🛡️ Hybrid LLM Safety System
 
 [![CI](https://github.com/username/jailbreak/actions/workflows/ci.yml/badge.svg)](https://github.com/username/jailbreak/actions/workflows/ci.yml)
